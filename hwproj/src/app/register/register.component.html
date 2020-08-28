@@ -15,15 +15,11 @@
     </div>
     <div class="p-field">
       <label for="">Api</label>
-      <p-dropdown [options]="cities1" [(ngModel)]="selectedCity1"></p-dropdown>
-      <p-dropdown [options]="cities2" [(ngModel)]="selectedCity2" optionLabel="name"></p-dropdown>
-      <!-- <p-dropdown inputId="state" placeholder="Select" optionLabel="name"></p-dropdown> -->
-      <!-- <select>
-        <option value="">aa</option>
-        <option value="">bb</option>
-        <option value="">cc</option>
-      </select> -->
+      <select (change)="selectValue($event)">
+        <option *ngFor="let d of a" value="{{ d }}">{{ d }}</option>
+      </select>
     </div>
+    <span>{{ api }}</span>
     <div>{{ regisData | json }}</div>
     <p-button label="Submit" (click)="addRegis()"></p-button>
   </div>
@@ -34,11 +30,13 @@
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Age</th>
+        <th>Api-value</th>
       </tr>
       <tr *ngFor="let r of regisData">
         <td>{{ r.fname }}</td>
         <td>{{ r.lname }}</td>
         <td>{{ r.age }}</td>
+        <td>{{ r.api }}</td>
       </tr>
     </table>
     <!-- <p-table [value]="regisData">
