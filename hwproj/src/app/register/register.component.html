@@ -3,28 +3,29 @@
   <div class="p-col-4">
     <div class="p-field">
       <label for="">Firstname</label>
-      <input type="text" pInputText [(ngModel)]="fname" />
+      <input type="text" pInputText [(ngModel)]="regisData.fname" />
     </div>
     <div class="p-field">
       <label for="">Lastname</label>
-      <input type="text" pInputText [(ngModel)]="lname" />
+      <input type="text" pInputText [(ngModel)]="regisData.lname" />
     </div>
     <div class="p-field">
       <label for="">Age</label>
-      <input type="text" pInputText [(ngModel)]="age" />
+      <input type="text" pInputText [(ngModel)]="regisData.age" />
     </div>
     <div class="p-field">
       <label for="">Api</label>
       <select (change)="selectValue($event)">
-        <option *ngFor="let d of a" value="{{ d }}">{{ d }}</option>
+        <option *ngFor="let d of dataShipping" value="{{ d.value }}">{{ d.ShortName }}</option>
       </select>
     </div>
-    <span>{{ api }}</span>
-    <div>{{ regisData | json }}</div>
+
+    <!-- <span>{{ api }}</span> -->
+    <!-- <div>{{ regisData | json }}</div> -->
     <p-button label="Submit" (click)="addRegis()"></p-button>
   </div>
   <div class="p-col-3"></div>
   <div class="p-col-4">
-    <app-tabledetail [dataShow]="regisData"></app-tabledetail>
+    <app-tabledetail [dataShow]="keepRegisData"></app-tabledetail>
   </div>
 </div>

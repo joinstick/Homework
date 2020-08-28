@@ -10,8 +10,8 @@ export class RegisService {
 
   constructor(private http: HttpClient) { }
 
-  getValue(): Observable<any> {
-    return this.http.get<any>('https://test-apiomsimex.scglogistics.co.th/Master/Api/Master/GetAllShipper');
+  getValue(): Observable<DataApi> {
+    return this.http.get<DataApi>('https://test-apiomsimex.scglogistics.co.th/Master/Api/Master/GetAllShipper');
   }
 
 }

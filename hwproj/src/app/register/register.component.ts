@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Regis } from '../model/regis';
-import { DataApi } from '../model/data';
+import { DataApi, Data } from '../model/data';
 import { RegisService } from '../service/regis.service';
+// import { SelectItem } from 'primeng/api';
 
 @Component({
   selector: 'app-register',
@@ -9,15 +10,12 @@ import { RegisService } from '../service/regis.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  fname: string;
-  lname: string;
-  age: number;
-  regisData: Array<Regis> = [];
-  a: Array<any> = [];
-  b: DataApi = new DataApi();
-  api: string = '';
+  keepRegisData: Regis[] = [];
+  regisData: Regis = new Regis();
+  dataShipping: Data[];
+
   constructor(private regisservice: RegisService) {
-    // this.a = new Array<any>();
+    console.log(this.keepRegisData);
   }
 
   ngOnInit(): void {
@@ -26,26 +24,22 @@ export class RegisterComponent implements OnInit {
 
   getData() {
     this.regisservice.getValue().subscribe((data) => {
-      this.b = data;
-      // tslint:disable-next-line: prefer-for-of
-      for (let i = 0; i < this.b.Data.length; i++) {
-        this.a.push(this.b.Data[i].value);
-      }
-      console.log(this.a);
-    });
+      console.log(data);
 
+      this.dataShipping = data.Data;
+      console.log(this.dataShipping);
+    });
   }
 
   addRegis() {
-    let regis = new Regis();
-    regis.fname = this.fname;
-    regis.lname = this.lname;
-    regis.age = this.age;
-    regis.api = this.api;
-    this.regisData.push(regis);
+    console.log(this.regisData.lname);
+    console.log(this.regisData);
+    let cloneRegisData = {...this.regisData};
+    this.keepRegisData.push(cloneRegisData);
+    console.log(this.keepRegisData);
   }
 
   selectValue(event: any) {
-    this.api = event.target.value;
+    this.regisData.api = event.target.value;
   }
 }

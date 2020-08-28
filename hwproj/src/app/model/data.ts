@@ -4,11 +4,13 @@ export class DataApi {
   Errors: boolean;
   Status: boolean;
   Data: Data[];
+  Total: number;
   constructor() {
     // this.Data = [];
   }
 }
 
+//array
 export class Data {
   value: string;
   label: string;
