@@ -10,9 +10,10 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { HttpClientModule } from '@angular/common/http';
+import { TabledetailComponent } from './register/component/tabledetail/tabledetail.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent],
+  declarations: [AppComponent, RegisterComponent, TabledetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

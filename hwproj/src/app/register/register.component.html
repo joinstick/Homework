@@ -25,35 +25,6 @@
   </div>
   <div class="p-col-3"></div>
   <div class="p-col-4">
-    <table style="width: 100%">
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Age</th>
-        <th>Api-value</th>
-      </tr>
-      <tr *ngFor="let r of regisData">
-        <td>{{ r.fname }}</td>
-        <td>{{ r.lname }}</td>
-        <td>{{ r.age }}</td>
-        <td>{{ r.api }}</td>
-      </tr>
-    </table>
-    <!-- <p-table [value]="regisData">
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Age</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-r>
-        <tr>
-          <td>{{ r.fname }}</td>
-          <td>{{ r.lname }}</td>
-          <td>{{ r.age }}</td>
-        </tr>
-      </ng-template>
-    </p-table> -->
+    <app-tabledetail [dataShow]="regisData"></app-tabledetail>
   </div>
 </div>
