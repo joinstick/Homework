@@ -16,12 +16,12 @@
     <div class="p-field">
       <label for="">Api</label>
       <select (change)="selectValue($event)">
-        <option *ngFor="let d of dataShipping" value="{{ d.value }}">{{ d.ShortName }}</option>
+        <option *ngFor="let data of dataShipping" value="{{ data.value }}">
+          {{ data.ShortName }}
+        </option>
       </select>
     </div>
 
-    <!-- <span>{{ api }}</span> -->
-    <!-- <div>{{ regisData | json }}</div> -->
     <p-button label="Submit" (click)="addRegis()"></p-button>
   </div>
   <div class="p-col-3"></div>

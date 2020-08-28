@@ -5,16 +5,12 @@ export class DataApi {
   Status: boolean;
   Data: Data[];
   Total: number;
-  constructor() {
-    // this.Data = [];
-  }
+  constructor() {}
 }
 
-//array
 export class Data {
   value: string;
   label: string;
   ShortName: string;
   Reference: any;
 }
-
