@@ -17,7 +17,7 @@
       <label for="">Api</label>
       <select (change)="selectValue($event)">
         <option *ngFor="let data of dataShipping" value="{{ data.value }}">
-          {{ data.ShortName }}
+          {{ data.value }} | {{ data.ShortName }}
         </option>
       </select>
     </div>
